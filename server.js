@@ -10,6 +10,7 @@ const mUser = require('./models/musers').user;
 const mChat = require('./models/mchat').chat;
 
 app.use(bodyParser.json());
+// app.use(express.static(__dirname+'/dist/mean-book'));
 
 var corsOption = {
 	orign: 'http://localhost:4200',
@@ -23,8 +24,8 @@ app.use(cors(corsOption));
 const cat = mongoose.model('cat',{name:String});
 
 //db connection
-mongoose.connect('mongodb://localhost:27017/mean-book', {useNewUrlParser: true});
-
+//mongoose.connect('mongodb://localhost:27017/mean-book', {useNewUrlParser: true});
+mongoose.connect('mongodb://hussain:inazumaHussain8@ds119171.mlab.com:19171/testingnode', {useNewUrlParser: true});
 app.listen(3000, () => {
   console.log('Server started!');
 });

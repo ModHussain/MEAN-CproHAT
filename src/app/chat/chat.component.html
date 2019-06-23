@@ -1,23 +1,25 @@
 <div class="container py-5">
-	<div class="card col-md-12">
+	<div class="card offset-sm-2 col-md-8">
 	  <div class="card-body">
-	  	<input class="chatInput col-md-8" type="text" name="msg" [(ngModel)]="chat.msg"  placeholder="What's in your mind?">
-		<button class="ml-1 col-md-3 btn btn-success" (click)="onMsgSubmit()">
-			Post
+	  	<input class="chatInput col-md-11" type="text" name="msg" [(ngModel)]="chat.msg"  placeholder="What's in your mind?">
+		<button class="col-md-1 btn" (click)="onMsgSubmit()">
+			<i class="fab fa-telegram fa-2x"></i>
 		</button>
 	  </div>
 	</div>
 
 	<!-- Chats list goes here -->
-	<div class="list-group messageList">
+	
+	<div class="offset-sm-2 col-sm-8 list-group messageList">
 	    <a  class="list-group-item" *ngFor="let chat of allChats" style="max-height: 90px !important;">
 	      	<h5 class="list-group-item-heading">
-	      	{{chat.msg}}
+	      	<i class="fas fa-comment-dots"></i> {{chat.msg}}
 	  		</h5>
-	      	<p class="list-group-item-text">
-		    {{chat.userName}} on 
-		    <small>{{chat.crAt|date:"medium"}}</small>
-		  	</p>
+	      	<span class="list-group-item-text">
+		    <i class="far fa-user-circle"></i> {{chat.userName}}</span>
+			<span class="float-right" style="display: inline-block"><i class="far fa-clock"></i> {{chat.crAt|date:"short"}}</span>
+			  
+			  
 	    </a>
 	    
 	  </div>

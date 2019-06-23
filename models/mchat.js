@@ -8,4 +8,4 @@ const mongoose = require('mongoose'),
 	crAt: { type: Date, default: Date.now }
  });
 
-module.exports = {chat: mongoose.model('chats',chatSchema)}
+module.exports = {chat: mongoose.model('Mchats',chatSchema)}
